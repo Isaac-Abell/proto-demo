@@ -67,17 +67,22 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportData, onClose, onDown
               label="Overall Engagement"
             />
 
-            <h4>By Gender</h4>
-            <FilteredEngagementChart
-              data={{ male: insights.male_engagement, female: insights.female_engagement }}
-              label="Engagement by Gender"
-            />
+            <div>
+              <h4>By Gender</h4>
+              <FilteredEngagementChart
+                data={{ male: insights.male_engagement, female: insights.female_engagement }}
+                label="Engagement by Gender"
+              />
+            </div>
 
-            <h4>By Age</h4>
-            <FilteredEngagementChart data={insights.age_engagement} label="Engagement by Age" />
-
-            <h4>By Race</h4>
-            <FilteredEngagementChart data={insights.race_engagement} label="Engagement by Race" />
+            <div>
+              <h4>By Age</h4>
+              <FilteredEngagementChart data={insights.age_engagement} label="Engagement by Age" />
+            </div>
+            <div>
+              <h4>By Race</h4>
+              <FilteredEngagementChart data={insights.race_engagement} label="Engagement by Race" />
+            </div>
           </section>
 
           {/* Trends */}
@@ -100,8 +105,8 @@ const ReportViewer: React.FC<ReportViewerProps> = ({ reportData, onClose, onDown
             </ul>
           </section>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

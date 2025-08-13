@@ -66,11 +66,14 @@ const DemographicChart: React.FC<DemographicChartProps> = ({ title, data, type =
         },
         responsive: true,
         maintainAspectRatio: false,
-        scales: {
-            x: { ticks: { color: '#FFFFFF' } },
-            y: { ticks: { color: '#FFFFFF' } }
-        }
+        ...(type === 'bar' ? {
+            scales: {
+                x: { ticks: { color: '#FFFFFF' } },
+                y: { ticks: { color: '#FFFFFF' } }
+            }
+        } : {})
     };
+
 
 
     return (

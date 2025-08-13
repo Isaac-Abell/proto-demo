@@ -71,11 +71,25 @@ const FilteredEngagementChart: React.FC<FilteredEngagementChartProps> = ({ data,
 
 
   return (
-    <div>
+    <div
+      style={{
+        width: '100%',
+        height: '60vh', // chart takes 40% of viewport height
+        minHeight: '300px' // but at least 300px tall
+      }}
+    >
       {isCategorical && (
-        <div className="checkbox-group" style={{ marginBottom: '1rem' }}>
+        <div
+          className="checkbox-group"
+          style={{
+            marginBottom: '1rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.5rem'
+          }}
+        >
           {categories.map((cat, idx) => (
-            <label key={cat} style={{ marginRight: '1rem', color: getColor(idx) }}>
+            <label key={cat} style={{ color: getColor(idx) }}>
               <input
                 type="checkbox"
                 checked={selected.includes(cat)}
@@ -86,8 +100,27 @@ const FilteredEngagementChart: React.FC<FilteredEngagementChartProps> = ({ data,
           ))}
         </div>
       )}
-      <Line data={chartData} options={options} />
+      <Line
+        data={chartData}
+        options={{
+          ...options,
+          maintainAspectRatio: false, // chart fills container
+          scales: {
+            ...options.scales,
+            x: {
+              ...options.scales.x,
+              ticks: {
+                ...options.scales.x.ticks,
+                maxRotation: 0,
+                autoSkip: true,
+                maxTicksLimit: 6
+              }
+            }
+          }
+        }}
+      />
     </div>
+
   );
 };
 
