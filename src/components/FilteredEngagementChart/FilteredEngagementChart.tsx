@@ -59,7 +59,7 @@ const FilteredEngagementChart: React.FC<FilteredEngagementChartProps> = ({ data,
       x: {
         title: { display: true, text: 'Minutes', color: '#FFFFFF' },
         ticks: {
-          color: '#FFFFFF', callback: (val: any, index: number) => {
+          color: '#FFFFFF', callback: (_: any, index: number) => {
             const step = totalSeconds > 3600 ? 120 : totalSeconds > 1800 ? 60 : 30;
             return index % step === 0 ? (index / 60).toFixed(1) : '';
           }

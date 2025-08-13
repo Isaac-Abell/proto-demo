@@ -24,21 +24,13 @@ ChartJS.register(
   Legend
 );
 
-// Small reusable component for a metric box
-const MetricBox: React.FC<{ title: string; value: number }> = ({ title, value }) => (
-  <div className="metric-box">
-    <h4>{title}</h4>
-    <p>{value}</p>
-  </div>
-);
-
 // Main ReportViewer component
 const ReportViewer: React.FC<ReportViewerProps> = ({ reportData, onClose, onDownload }) => {
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
   };
 
-  const { demographics, insights, top_engagement, low_engagement_moments, trends_over_time, recommendations } = reportData;
+  const { demographics, insights, trends_over_time, recommendations } = reportData;
 
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>

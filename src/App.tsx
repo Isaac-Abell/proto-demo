@@ -75,7 +75,7 @@ const App: React.FC = () => {
     <div className="app">
       <div className="container">
         <h1 className="app-title">
-          Video Report Processor
+          Engagement Processor
         </h1>
 
         <div className="app-content">
