@@ -1,0 +1,392 @@
+.app {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #1C1B21;
+  color: white;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #7B00FF, #D80621);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-content {
+  margin: 0 auto;
+}
+
+/* Video Uploader Styles */
+.video-uploader {
+  width: 100%;
+}
+
+.upload-area {
+  border: 2px dashed #4B5563;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.upload-area:hover {
+  border-color: #7B00FF;
+}
+
+.file-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.file-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #7B00FF;
+}
+
+.file-info {
+  text-align: center;
+}
+
+.file-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+}
+
+.file-size {
+  color: #9CA3AF;
+  margin: 0.25rem 0 0 0;
+}
+
+.remove-file-btn {
+  color: #D80621;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.remove-file-btn:hover {
+  color: #EF4444;
+}
+
+.upload-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #9CA3AF;
+}
+
+.upload-title {
+  font-size: 1.25rem;
+  color: #D1D5DB;
+  margin: 0 0 0.5rem 0;
+}
+
+.upload-subtitle {
+  color: #6B7280;
+  margin: 0 0 1rem 0;
+}
+
+.file-input-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #7B00FF, #D80621);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-weight: 500;
+}
+
+.file-input-btn:hover {
+  opacity: 0.9;
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(216, 6, 33, 0.2);
+  border: 1px solid #D80621;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.error-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #D80621;
+  flex-shrink: 0;
+}
+
+.error-message span {
+  color: #D80621;
+}
+
+.process-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.process-btn {
+  background: linear-gradient(135deg, #7B00FF, #D80621);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-size: 1rem;
+}
+
+.process-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.process-btn:not(:disabled):hover {
+  opacity: 0.9;
+}
+
+.processing-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.popup-modal {
+  background-color: #1C1B21;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.popup-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popup-title h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.success-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #10B981;
+}
+
+.close-btn {
+  color: #9CA3AF;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+.close-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.popup-message {
+  color: #D1D5DB;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.view-btn, .download-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-weight: 500;
+}
+
+.view-btn {
+  background-color: #7B00FF;
+  color: white;
+}
+
+.download-btn {
+  background-color: #D80621;
+  color: white;
+}
+
+.view-btn:hover, .download-btn:hover {
+  opacity: 0.9;
+}
+
+.btn-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Report Viewer Styles */
+.report-modal {
+  background-color: #1C1B21;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  max-width: 64rem;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #374151;
+}
+
+.report-header h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.report-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.report-content {
+  padding: 1.5rem;
+  overflow: auto;
+  flex: 1;
+}
+
+.report-text {
+  white-space: pre-wrap;
+  color: #D1D5DB;
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .upload-area {
+    padding: 1.5rem;
+  }
+  
+  .popup-actions {
+    flex-direction: column;
+  }
+  
+  .view-btn, .download-btn {
+    width: 100%;
+  }
+  
+  .report-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .report-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
